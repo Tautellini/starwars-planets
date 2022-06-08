@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.example.starwarsplanets"
         minSdk 24
-        targetSdk 31
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
@@ -76,18 +76,17 @@ dependencies {
 
     // OkHttp
     implementation('com.squareup.okhttp3:okhttp:4.9.3')
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
 
     // System UI Controller - Accompanist
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
 
     // Room
     implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     implementation "androidx.room:room-paging:$room_version"
-
-    // Paging 3
-    implementation 'androidx.paging:paging-compose:1.0.0-alpha15'
 
     // ApplicationProvider
     implementation 'com.github.kibotu:ApplicationProvider:1.6.10'
@@ -101,6 +100,12 @@ dependencies {
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+
+    // Paging
+    implementation 'androidx.paging:paging-compose:1.0.0-alpha14'
+
+    // Accompanist
+    implementation "com.google.accompanist:accompanist-swiperefresh:0.24.10-beta"
 }
 
 // Allow references to generated code
