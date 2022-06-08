@@ -1,11 +1,18 @@
-package com.example.starwarsplanets.features.planets.datasources.network
+package com.example.starwarsplanets.features.planets.datasources.database.model
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+@Entity(tableName = "planets")
 @Serializable
-data class PlanetRemote(
+data class PlanetLocal(
+    @PrimaryKey(autoGenerate = false)
+    var id: Long = 0,
+    @SerialName("name")
+    val name: String? = null,
     @SerialName("climate")
     val climate: String? = null,
     @SerialName("created")
@@ -18,8 +25,6 @@ data class PlanetRemote(
     val films: List<String>? = null,
     @SerialName("gravity")
     val gravity: String? = null,
-    @SerialName("name")
-    val name: String? = null,
     @SerialName("orbital_period")
     val orbitalPeriod: String? = null,
     @SerialName("population")

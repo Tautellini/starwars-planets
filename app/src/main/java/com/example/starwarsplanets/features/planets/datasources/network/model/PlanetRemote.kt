@@ -1,11 +1,11 @@
-package com.example.starwarsplanets.features.planets.datasources.database
+package com.example.starwarsplanets.features.planets.datasources.network.model
 
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class PlanetLocal(
+data class PlanetRemote(
     @SerialName("climate")
     val climate: String? = null,
     @SerialName("created")
