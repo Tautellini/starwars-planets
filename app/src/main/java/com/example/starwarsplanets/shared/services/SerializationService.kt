@@ -1,4 +1,4 @@
-package com.example.starwarsplanets.services
+package com.example.starwarsplanets.shared.services
 
 import kotlinx.serialization.json.Json
 

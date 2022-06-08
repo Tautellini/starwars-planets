@@ -1,4 +1,4 @@
-package com.example.starwarsplanets.ui.theme
+package com.example.starwarsplanets.shared.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
