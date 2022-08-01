@@ -19,14 +19,10 @@ fun PlanetScreen(
         viewModel.getPlanet(id = id)
     }
 
-    val selectedPlanet by viewModel.selectedPlanet.collectAsState()
-    val nextPlanet by viewModel.nextPlanet.collectAsState()
-    val previousPlanet by viewModel.previousPlanet.collectAsState()
-
     val planetContentState = PlanetContentState.rememberState(
-        nextPlanet = nextPlanet,
-        previousPlanet = previousPlanet,
-        selectedPlanet = selectedPlanet
+        nextPlanet = viewModel.nextPlanet.collectAsState().value,
+        previousPlanet = viewModel.previousPlanet.collectAsState().value,
+        selectedPlanet = viewModel.selectedPlanet.collectAsState().value
     )
 
     PlanetContent(
