@@ -133,7 +133,7 @@ private fun InteractivePreview() {
             selectedPlanet = selectedPlanet
         )
 
-        PlanetContent(state = state,
+        PlanetContent(state = state.value,
             onNextButtonClicked = { selectedId++ },
             onPreviousButtonClicked = { selectedId-- }
         )

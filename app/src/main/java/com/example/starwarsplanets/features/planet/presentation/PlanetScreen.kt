@@ -23,12 +23,14 @@ fun PlanetScreen(
     val nextPlanet by viewModel.nextPlanet.collectAsState()
     val previousPlanet by viewModel.previousPlanet.collectAsState()
 
+    val planetContentState = PlanetContentState.rememberState(
+        nextPlanet = nextPlanet,
+        previousPlanet = previousPlanet,
+        selectedPlanet = selectedPlanet
+    )
+
     PlanetContent(
-        PlanetContentState.rememberState(
-            nextPlanet = nextPlanet,
-            previousPlanet = previousPlanet,
-            selectedPlanet = selectedPlanet
-        ),
+        state = planetContentState.value,
         onNextButtonClicked = { navController.navigate(Route.Planet.passId(id + 1)) },
         onPreviousButtonClicked = { navController.navigate(Route.Planet.passId(id - 1)) }
     )
